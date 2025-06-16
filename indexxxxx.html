@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bit&Books | Accounting & IT Support in Ottawa</title>
+    <meta name="description" content="Personalized bilingual bookkeeping and IT services for small businesses and individuals. Serving Ottawa–Gatineau and beyond.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #444444;
+        }
+        .hero-bg {
+            background: linear-gradient(rgba(220, 231, 239, 0.9), rgba(220, 231, 239, 0.9)), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .language-toggle {
+            transition: all 0.3s ease;
+        }
+        .language-toggle.active {
+            background-color: #2C8C8A;
+            color: white;
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #2C8C8A;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        .testimonial-slide {
+            transition: transform 0.5s ease;
+        }
+    </style>
+</head>
+<body class="bg-[#DCE7EF]">
+    <!-- Navbar -->
+    <nav class="fixed w-full bg-white shadow-md z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <div class="flex items-center">
+                        <div class="bg-[#2C8C8A] w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-xl">B&B</div>
+                        <span class="ml-3 text-xl font-bold text-[#153B52]">Bit&Books</span>
+                    </div>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-[#444444] hover:text-[#2C8C8A]">Home</a>
+                    <a href="#about" class="nav-link text-[#444444] hover:text-[#2C8C8A]">About</a>
+                    <a href="#services" class="nav-link text-[#444444] hover:text-[#2C8C8A]">Services</a>
+                    <a href="#why-us" class="nav-link text-[#444444] hover:text-[#2C8C8A]">Why Us</a>
+                    <a href="#contact" class="nav-link text-[#444444] hover:text-[#2C8C8A]">Contact</a>
+                    
+                    <!-- Language Toggle -->
+                    <div class="flex items-center space-x-2 ml-6">
+                        <button id="en-toggle" class="language-toggle active px-3 py-1 rounded-full text-sm font-medium">EN</button>
+                        <button id="fr-toggle" class="language-toggle px-3 py-1 rounded-full text-sm font-medium">FR</button>
+                    </div>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-[#444444] hover:text-[#2C8C8A] focus:outline-none">
+                        <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 text-[#444444] hover:text-[#2C8C8A]">Home</a>
+                <a href="#about" class="block px-3 py-2 text-[#444444] hover:text-[#2C8C8A]">About</a>
+                <a href="#services" class="block px-3 py-2 text-[#444444] hover:text-[#2C8C8A]">Services</a>
+                <a href="#why-us" class="block px-3 py-2 text-[#444444] hover:text-[#2C8C8A]">Why Us</a>
+                <a href="#contact" class="block px-3 py-2 text-[#444444] hover:text-[#2C8C8A]">Contact</a>
+                
+                <div class="flex px-3 py-2 space-x-2">
+                    <button id="mobile-en-toggle" class="language-toggle active px-3 py-1 rounded-full text-sm font-medium">EN</button>
+                    <button id="mobile-fr-toggle" class="language-toggle px-3 py-1 rounded-full text-sm font-medium">FR</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="md:flex items-center justify-between">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold text-[#153B52] mb-6 en">Reliable Support for Your Business Backbone</h1>
+                    <h1 class="text-4xl md:text-5xl font-bold text-[#153B52] mb-6 fr hidden">Soutien fiable pour l'épine dorsale de votre entreprise</h1>
+                    <p class="text-xl text-[#444444] mb-8 en">Accounting & IT services tailored to small businesses and self-employed professionals</p>
+                    <p class="text-xl text-[#444444] mb-8 fr hidden">Services de comptabilité et d'informatique adaptés aux petites entreprises et aux professionnels indépendants</p>
+                    <button class="bg-[#2C8C8A] hover:bg-[#247875] text-white font-bold py-3 px-8 rounded-full transition duration-300 en">
+                        Get a Free Quote
+                    </button>
+                    <button class="bg-[#2C8C8A] hover:bg-[#247875] text-white font-bold py-3 px-8 rounded-full transition duration-300 fr hidden">
+                        Obtenir un devis gratuit
+                    </button>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="bg-white p-6 rounded-2xl shadow-xl max-w-md">
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1511&q=80" alt="Business support" class="rounded-xl w-full h-auto">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-center text-[#153B52] mb-4 en">Who We Are</h2>
+            <h2 class="text-3xl font-bold text-center text-[#153B52] mb-4 fr hidden">Qui sommes-nous</h2>
+            
+            <div class="md:flex items-center mt-12">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <div class="bg-[#E7E1DC] p-6 rounded-2xl">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Ahmed Rebai" class="rounded-xl w-full h-auto">
+                        <p class="mt-4 text-center font-medium">Ahmed Rebai, Founder</p>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <p class="text-lg text-[#444444] mb-8 en">
+                        Bit&Books is a bilingual accounting and IT support micro-enterprise based in Ottawa, dedicated to helping small businesses, freelancers, and newcomers navigate their financial and technological needs with confidence.
+                    </p>
+                    <p class="text-lg text-[#444444] mb-8 fr hidden">
+                        Bit&Books est une micro-entreprise bilingue de comptabilité et de soutien informatique basée à Ottawa, dédiée à aider les petites entreprises, les travailleurs autonomes et les nouveaux arrivants à naviguer dans leurs besoins financiers et technologiques en toute confiance.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="flex items-start">
+                            <div class="bg-[#2C8C8A] text-white p-3 rounded-full mr-4">
+                                <i class="fas fa-hand-holding-heart text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-[#153B52] en">Honesty</h4>
+                                <h4 class="font-bold text-[#153B52] fr hidden">Honnêteté</h4>
+                                <p class="text-sm text-[#444444] en">Transparent pricing and ethical practices</p>
+                                <p class="text-sm text-[#444444] fr hidden">Tarification transparente et pratiques éthiques</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-[#2C8C8A] text-white p-3 rounded-full mr-4">
+                                <i class="fas fa-random text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-[#153B52] en">Flexibility</h4>
+                                <h4 class="font-bold text-[#153B52] fr hidden">Flexibilité</h4>
+                                <p class="text-sm text-[#444444] en">Services tailored to your unique needs</p>
+                                <p class="text-sm text-[#444444] fr hidden">Services adaptés à vos besoins uniques</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-[#2C8C8A] text-white p-3 rounded-full mr-4">
+                                <i class="fas fa-universal-access text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-[#153B52] en">Accessibility</h4>
+                                <h4 class="font-bold text-[#153B52] fr hidden">Accessibilité</h4>
+                                <p class="text-sm text-[#444444] en">Student- and newcomer-friendly services</p>
+                                <p class="text-sm text-[#444444] fr hidden">Services adaptés aux étudiants et nouveaux arrivants</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-[#2C8C8A] text-white p-3 rounded-full mr-4">
+                                <i class="fas fa-comments text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-[#153B52] en">Bilingual</h4>
+                                <h4 class="font-bold text-[#153B52] fr hidden">Bilingue</h4>
+                                <p class="text-sm text-[#444444] en">Fluent in both English and French</p>
+                                <p class="text-sm text-[#444444] fr hidden">Courant en anglais et en français</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 px-4 sm:px-6 lg:px-8 bg-[#DCE7EF]">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-center text-[#153B52] mb-4 en">Our Services</h2>
+            <h2 class="text-3xl font-bold text-center text-[#153B52] mb-4 fr hidden">Nos services</h2>
+            <p class="text-lg text-center text-[#444444] mb-12 max-w-3xl mx-auto en">
+                Comprehensive solutions to keep your business finances and technology running smoothly
+            </p>
+            <p class="text-lg text-center text-[#444444] mb-12 max-w-3xl mx-auto fr hidden">
+                Solutions complètes pour que vos finances et votre technologie fonctionnent sans heurts
+            </p>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Accounting Services -->
+                <div class="service-card bg-white p-8 rounded-2xl shadow-md transition duration-300">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-[#2C8C8A] text-white p-3 rounded-full mr-4">
+                            <i class="fas fa-calculator text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-[#153B52] en">Accounting & Bookkeeping</h3>
+                        <h3 class="text-2xl font-bold text-[#153B52] fr hidden">Comptabilité et tenue de livres</h3>
+                    </div>
+                    
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-[#2C8C8A] mt-1 mr-3"></i>
+                            <span class="en">Bookkeeping (monthly/quarterly)</span>
+                            <span class="fr hidden">Tenue de livres (mensuelle/trimestrielle)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-[#2C8C8A] mt-1 mr-3"></i>
+                            <span class="en">GST/HST filing</span>
+                            <span class="fr hidden">Déclaration de TPS/TVH</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-[#2C8C8A] mt-1 mr-3"></i>
+                            <span class="en">CRA-compliant personal tax filing</span>
+                            <span class="fr hidden">Déclaration de revenus personnels conforme à l'ARC</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-[#2C8C8A] mt-1 mr-3"></i>
+                            <span class="en">Invoicing & budget tracking</span>
+                            <span class="fr hidden">Facturation et suivi budgétaire</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-[#2C8C8A] mt-1 mr-3"></i>
+                            <span class="en">Year-end support</span>
+                            <span class="fr hidden">Soutien de fin d'année</span>
+                        </li>
+                    </ul>
+                    
+                    <button class="mt-8 bg-[#153B52] hover:bg-[#0e2a3a] text-white font-bold py-2 px-6 rounded-full transition duration-300 en">
+                        Learn More
+                    </button>
+                    <button class="mt-8 bg-[#153B52] hover:bg-[#0e2a3a] text-white font-bold py-2 px-6 rounded-full transition duration-300 fr hidden">
+                        En savoir plus
+                    </button>
+                </div>
+                
+                <!-- IT Services -->
+                <div class="service-card bg-white p-8 rounded-2xl shadow-md transition duration-300">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-[#2C8C8A] text-white p-3 rounded-full mr-4">
+                            <i class="fas fa-laptop-code text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-[#153B52] en">IT & Tech Support</h3>
+                        <h3 class="text-2xl font-bold text-[#153B52] fr hidden">Support informatique et technologique</h3>
+                    </div>
+                    
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-[#2C8C8A] mt-1 mr-3"></i>
+                            <span class="en">POS system setup</span>
+                            <span class="fr hidden">Configuration de système de point de vente</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-[#2C8C8A] mt-1 mr-3"></i>
+                            <span class="en">Software configuration and repair</span>
+                            <span class="fr hidden">Configuration et réparation de logiciels</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-[#2C8C8A] mt-1 mr-3"></i>
+                            <span class="en">Cloud tool setup (Google Workspace, Microsoft 365)</span>
+                            <span class="fr hidden">Configuration d'outils cloud (Google Workspace, Microsoft 365)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-[#2C8C8A] mt-1 mr-3"></i>
+                            <span class="en">Hardware maintenance</span>
+                            <span class="fr hidden">Maintenance matérielle</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-[#2C8C8A] mt-1 mr-3"></i>
+                            <span class="en">Data backup and basic cybersecurity</span>
+                            <span class="fr hidden">Sauvegarde de données et cybersécurité de base</span>
+                        </li>
+                    </ul>
+                    
+                    <button class="mt-8 bg-[#153B52] hover:bg-[#0e2a3a] text-white font-bold py-2 px-6 rounded-full transition duration-300 en">
+                        Learn More
+                    </button>
+                    <button class="mt-8 bg-[#153B52] hover:bg-[#0e2a3a] text-white font-bold py-2 px-6 rounded-full transition duration-300 fr hidden">
+                        En savoir plus
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-us" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-center text-[#153B52] mb-4 en">Why Choose Bit&Books</h2>
+            <h2 class="text-3xl font-bold text-center text-[#153B52] mb-4 fr hidden">Pourquoi choisir Bit&Books</h2>
+            <p class="text-lg text-center text-[#444444] mb-12 max-w-3xl mx-auto en">
+                We go beyond basic services to provide exceptional value to our clients
+            </p>
+            <p class="text-lg text-center text-[#444444] mb-12 max-w-3xl mx-auto fr hidden">
+                Nous allons au-delà des services de base pour offrir une valeur exceptionnelle à nos clients
+            </p>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-[#E7E1DC] p-6 rounded-2xl">
+                    <div class="bg-[#2C8C8A] text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                        <i class="fas fa-comments text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#153B52] mb-2 en">Bilingual Service</h3>
+                    <h3 class="text-xl font-bold text-[#153B52] mb-2 fr hidden">Service bilingue</h3>
+                    <p class="text-[#444444] en">Fluent in both English and French to serve all clients effectively</p>
+                    <p class="text-[#444444] fr hidden">Courant en anglais et en français pour servir tous les clients efficacement</p>
+                </div>
+                
+                <div class="bg-[#E7E1DC] p-6 rounded-2xl">
+                    <div class="bg-[#2C8C8A] text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                        <i class="fas fa-laptop-house text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#153B52] mb-2 en">Flexible Support</h3>
+                    <h3 class="text-xl font-bold text-[#153B52] mb-2 fr hidden">Support flexible</h3>
+                    <p class="text-[#444444] en">Remote or in-person support based on your preference</p>
+                    <p class="text-[#444444] fr hidden">Support à distance ou en personne selon votre préférence</p>
+                </div>
+                
+                <div class="bg-[#E7E1DC] p-6 rounded-2xl">
+                    <div class="bg-[#2C8C8A] text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                        <i class="fas fa-hand-holding-usd text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#153B52] mb-2 en">Affordable Pricing</h3>
+                    <h3 class="text-xl font-bold text-[#153B52] mb-2 fr hidden">Tarification abordable</h3>
+                    <p class="text-[#444444] en">Student- and newcomer-friendly pricing without hidden fees</p>
+                    <p class="text-[#444444] fr hidden">Tarification adaptée aux étudiants et nouveaux arrivants sans frais cachés</p>
+                </div>
+                
+                <div class="bg-[#E7E1DC] p-6 rounded-2xl">
+                    <div class="bg-[#2C8C8A] text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                        <i class="fas fa-shield-alt text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#153B52] mb-2 en">Fully Secure</h3>
+                    <h3 class="text-xl font-bold text-[#153B52] mb-2 fr hidden">Complètement sécurisé</h3>
+                    <p class="text-[#444444] en">CRA-compliant with strict data protection protocols</p>
+                    <p class="text-[#444444] fr hidden">Conforme à l'ARC avec des protocoles stricts de protection des données</p>
+                </div>
+                
+                <div class="bg-[#E7E1DC] p-6 rounded-2xl">
+                    <div class="bg-[#2C8C8A] text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                        <i class="fas fa-user-tie text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#153B52] mb-2 en">Personalized Attention</h3>
+                    <h3 class="text-xl font-bold text-[#153B52] mb-2 fr hidden">Attention personnalisée</h3>
+                    <p class="text-[#444444] en">Dedicated service tailored to your specific business needs</p>
+                    <p class="text-[#444444] fr hidden">Service dédié adapté à vos besoins commerciaux spécifiques</p>
+                </div>
+                
+                <div class="bg-[#E7E1DC] p-6 rounded-2xl">
+                    <div class="bg-[#2C8C8A] text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mb-4">
+                        <i class="fas fa-headset text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#153B52] mb-2 en">Quick Response</h3>
+                    <h3 class="text-xl font-bold text-[#153B52] mb-2 fr hidden">Réponse rapide</h3>
+                    <p class="text-[#444444] en">Timely support when you need it most</p>
+                    <p class="text-[#444444] fr hidden">Support rapide quand vous en avez le plus besoin</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-[#DCE7EF]">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-center text-[#153B52] mb-4 en">What Our Clients Say</h2>
+            <h2 class="text-3xl font-bold text-center text-[#153B52] mb-4 fr hidden">Ce que disent nos clients</h2>
+            
+            <div class="relative mt-12">
+                <div id="testimonial-slider" class="overflow-hidden">
+                    <div class="flex transition-transform duration-500">
+                        <!-- Testimonial 1 -->
+                        <div class="testimonial-slide min-w-full px-4">
+                            <div class="bg-white p-8 rounded-2xl shadow-md">
+                                <div class="flex items-center mb-6">
+                                    <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Client" class="w-12 h-12 rounded-full mr-4">
+                                    <div>
+                                        <h4 class="font-bold text-[#153B52]">Sarah Johnson</h4>
+                                        <p class="text-sm text-[#2C8C8A] en">Small Business Owner</p>
+                                        <p class="text-sm text-[#2C8C8A] fr hidden">Propriétaire de petite entreprise</p>
+                                    </div>
+                                </div>
+                                <p class="text-[#444444] italic en">
+                                    "Bit&Books has been a game-changer for my small boutique. Their accounting services are meticulous and their IT support saved me from a major data loss. Highly recommend!"
+                                </p>
+                                <p class="text-[#444444] italic fr hidden">
+                                    "Bit&Books a été un changement radical pour ma petite boutique. Leurs services comptables sont méticuleux et leur support informatique m'a évité une perte de données majeure. Je recommande vivement!"
+                                </p>
+                                <div class="flex mt-4">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 2 -->
+                        <div class="testimonial-slide min-w-full px-4">
+                            <div class="bg-white p-8 rounded-2xl shadow-md">
+                                <div class="flex items-center mb-6">
+                                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="w-12 h-12 rounded-full mr-4">
+                                    <div>
+                                        <h4 class="font-bold text-[#153B52]">Marc Tremblay</h4>
+                                        <p class="text-sm text-[#2C8C8A] en">Freelance Designer</p>
+                                        <p class="text-sm text-[#2C8C8A] fr hidden">Designer indépendant</p>
+                                    </div>
+                                </div>
+                                <p class="text-[#444444] italic en">
+                                    "As a freelancer, I needed help with taxes and setting up my business systems. Ahmed was patient, explained everything clearly in French, and saved me money. Excellent service!"
+                                </p>
+                                <p class="text-[#444444] italic fr hidden">
+                                    "En tant que travailleur autonome, j'avais besoin d'aide pour les impôts et la mise en place de mes systèmes d'entreprise. Ahmed a été patient, a tout expliqué clairement en français et m'a fait économiser de l'argent. Excellent service!"
+                                </p>
+                                <div class="flex mt-4">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 3 -->
+                        <div class="testimonial-slide min-w-full px-4">
+                            <div class="bg-white p-8 rounded-2xl shadow-md">
+                                <div class="flex items-center mb-6">
+                                    <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Client" class="w-12 h-12 rounded-full mr-4">
+                                    <div>
+                                        <h4 class="font-bold text-[#153B52]">Priya Patel</h4>
+                                        <p class="text-sm text-[#2C8C8A] en">Nonprofit Director</p>
+                                        <p class="text-sm text-[#2C8C8A] fr hidden">Directrice d'organisme à but non lucratif</p>
+                                    </div>
+                                </div>
+                                <p class="text-[#444444] italic en">
+                                    "Our nonprofit was struggling with financial reporting until we found Bit&Books. They implemented a system that works perfectly for our needs at a price we can afford."
+                                </p>
+                                <p class="text-[#444444] italic fr hidden">
+                                    "Notre organisme à but non lucratif avait du mal avec les rapports financiers jusqu'à ce que nous trouvions Bit&Books. Ils ont mis en place un système qui fonctionne parfaitement pour nos besoins à un prix que nous pouvons nous permettre."
+                                </p>
+                                <div class="flex mt-4">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button id="prev-testimonial" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md hover:bg-[#E7E1DC]">
+                    <i class="fas fa-chevron-left text-[#2C8C8A]"></i>
+                </button>
+                <button id="next-testimonial" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md hover:bg-[#E7E1DC]">
+                    <i class="fas fa-chevron-right text-[#2C8C8A]"></i>
+                </button>
+                
+                <div class="flex justify-center mt-6 space-x-2">
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-[#2C8C8A] opacity-50" data-index="0"></button>
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-[#2C8C8A] opacity-50" data-index="1"></button>
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-[#2C8C8A] opacity-50" data-index="2"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-center text-[#153B52] mb-4 en">Simple, Transparent Pricing</h2>
+            <h2 class="text-3xl font-bold text-center text-[#153B52] mb-4 fr hidden">Tarification simple et transparente</h2>
+            <p class="text-lg text-center text-[#444444] mb-12 max-w-3xl mx-auto en">
+                Choose the plan that fits your needs. All services can be customized.
+            </p>
+            <p class="text-lg text-center text-[#444444] mb-12 max-w-3xl mx-auto fr hidden">
+                Choisissez le plan qui correspond à vos besoins. Tous les services peuvent être personnalisés.
+            </p>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Hourly Plan -->
+                <div class="bg-[#E7E1DC] p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold text-[#153B52] mb-2 en">Hourly Support</h3>
+                    <h3 class="text-2xl font-bold text-[#153B52] mb-2 fr hidden">Support horaire</h3>
+                    <p class="text-4xl font-bold text-[#2C8C8A] mb-4">$45<span class="text-lg font-normal text-[#444444] en">/hour</span><span class="text-lg font-normal text-[#444444] fr hidden">/heure</span></p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-[#2C8C8A] mt-1 mr-3"></i>
+                            <span class="en">Pay only for time used</span>
+                            <span class="fr hidden">Payez uniquement pour le temps utilisé</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-[#2C8C8A] mt-1 mr-3"></i>
+                            <span class="en">15-minute billing increments</span>
+                            <span class="fr hidden">Facturation par incréments de 15 minutes</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-[#2C8C8A] mt-1 mr-3"></i>
+                            <span class="en">Flexible scheduling</span>
+                            <span class="fr hidden">Planification flexible</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-[#2C8C8A] mt-1 mr-3"></i>
+                            <span class="en">Perfect for one-time needs</span>
+                            <span class="fr hidden">Parfait pour les besoins ponctuels</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-[#153B52] hover:bg-[#0e2a3a] text-white font-bold py-3 px-6 rounded-full transition duration-300 en">
+                        Get Started
+                    </button>
+                    <button class="w-full bg-[#153B52] hover:bg-[#0e2a3a] text-white font-bold py-3 px-6 rounded-full transition duration-300 fr hidden">
+                        Commencer
+                    </button>
+                </div>
+                
+                <!-- Monthly Plan -->
+                <div class="bg-[#2C8C8A] p-8 rounded-2xl text-white transform scale-105 shadow-xl">
+                    <div class="absolute top-0 right-0 bg-[#153B52] text-white px-4 py-1 rounded-bl-lg rounded-tr-2xl text-sm font-bold en">
+                        MOST POPULAR
+                    </div>
+                    <div class="absolute top-0 right-0 bg-[#153B52] text-white px-4 py-1 rounded-bl-lg rounded-tr-2xl text-sm font-bold fr hidden">
+                        LE PLUS POPULAIRE
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2 en">Monthly Package</h3>
+                    <h3 class="text-2xl font-bold text-white mb-2 fr hidden">Forfait mensuel</h3>
+                    <p class="text-4xl font-bold text-white mb-4">$250<span class="text-lg font-normal text-white opacity-80 en">/month</span><span class="text-lg font-normal text-white opacity-80 fr hidden">/mois</span></p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-white mt-1 mr-3"></i>
+                            <span class="en">Up to 10 hours of support</span>
+                            <span class="fr hidden">Jusqu'à 10 heures de support</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-white mt-1 mr-3"></i>
+                            <span class="en">Priority scheduling</span>
+                            <span class="fr hidden">Planification prioritaire</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-white mt-1 mr-3"></i>
+                            <span class="en">Monthly financial review</span>
+                            <span class="fr hidden">Revue financière mensuelle</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-white mt-1 mr-3"></i>
+                            <span class="en">Discounted hourly rate beyond package</span>
+                            <span class="fr hidden">Tarif horaire réduit au-delà du forfait</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-white hover:bg-[#E7E1DC] text-[#153B52] font-bold py-3 px-6 rounded-full transition duration-300 en">
+                        Choose Plan
+                    </button>
+                    <button class="w-full bg-white hover:bg-[#E7E1DC] text-[#153B52] font-bold py-3 px-6 rounded-full transition duration-300 fr hidden">
+                        Choisir le forfait
+                    </button>
+                </div>
+                
+                <!-- Project-Based -->
+                <div class="bg-[#E7E1DC] p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold text-[#153B52] mb-2 en">Project-Based</h3>
+                    <h3 class="text-2xl font-bold text-[#153B52] mb-2 fr hidden">Par projet</h3>
+                    <p class="text-4xl font-bold text-[#2C8C8A] mb-4 en">Custom Quote</p>
+                    <p class="text-4xl font-bold text-[#2C8C8A] mb-4 fr hidden">Devis personnalisé</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-[#2C8C8A] mt-1 mr-3"></i>
+                            <span class="en">Fixed price for complete projects</span>
+                            <span class="fr hidden">Prix fixe pour des projets complets</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-[#2C8C8A] mt-1 mr-3"></i>
+                            <span class="en">Detailed scope of work</span>
+                            <span class="fr hidden">Champ d'application détaillé</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-[#2C8C8A] mt-1 mr-3"></i>
+                            <span class="en">Milestone payments</span>
+                            <span class="fr hidden">Paiements par étapes</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-[#2C8C8A] mt-1 mr-3"></i>
+                            <span class="en">Perfect for system setups or annual filings</span>
+                            <span class="fr hidden">Parfait pour les installations de système ou les déclarations annuelles</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-[#153B52] hover:bg-[#0e2a3a] text-white font-bold py-3 px-6 rounded-full transition duration-300 en">
+                        Get a Quote
+                    </button>
+                    <button class="w-full bg-[#153B52] hover:bg-[#0e2a3a] text-white font-bold py-3 px-6 rounded-full transition duration-300 fr hidden">
+                        Obtenir un devis
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 bg-[#DCE7EF]">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-center text-[#153B52] mb-4 en">Let's Work Together!</h2>
+            <h2 class="text-3xl font-bold text-center text-[#153B52] mb-4 fr hidden">Travaillons ensemble!</h2>
+            <p class="text-lg text-center text-[#444444] mb-12 max-w-3xl mx-auto en">
+                Ready to streamline your business operations? Get in touch today.
+            </p>
+            <p class="text-lg text-center text-[#444444] mb-12 max-w-3xl mx-auto fr hidden">
+                Prêt à rationaliser vos opérations commerciales? Contactez-nous dès aujourd'hui.
+            </p>
+            
+            <div class="md:flex">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <div class="bg-white p-8 rounded-2xl shadow-md">
+                        <h3 class="text-2xl font-bold text-[#153B52] mb-6 en">Contact Information</h3>
+                        <h3 class="text-2xl font-bold text-[#153B52] mb-6 fr hidden">Coordonnées</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-[#2C8C8A] text-white p-3 rounded-full mr-4">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-[#153B52] en">Location</h4>
+                                    <h4 class="font-bold text-[#153B52] fr hidden">Emplacement</h4>
+                                    <p class="text-[#444444]">Ottawa, ON</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-[#2C8C8A] text-white p-3 rounded-full mr-4">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-[#153B52] en">Phone</h4>
+                                    <h4 class="font-bold text-[#153B52] fr hidden">Téléphone</h4>
+                                    <p class="text-[#444444]">+1 (613) 581-9420</p>
+                                    <a href="https://wa.me/16135819420" class="text-[#2C8C8A] hover:underline flex items-center mt-1">
+                                        <i class="fab fa-whatsapp mr-2"></i>
+                                        <span class="en">Chat on WhatsApp</span>
+                                        <span class="fr hidden">Discuter sur WhatsApp</span>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-[#2C8C8A] text-white p-3 rounded-full mr-4">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-[#153B52] en">Email</h4>
+                                    <h4 class="font-bold text-[#153B52] fr hidden">Courriel</h4>
+                                    <p class="text-[#444444]">ahmed.rebai.999@outlook.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-[#2C8C8A] text-white p-3 rounded-full mr-4">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-[#153B52] en">Business Hours</h4>
+                                    <h4 class="font-bold text-[#153B52] fr hidden">Heures d'ouverture</h4>
+                                    <p class="text-[#444444] en">Monday - Friday: 9am - 6pm</p>
+                                    <p class="text-[#444444] fr hidden">Lundi - Vendredi: 9h - 18h</p>
+                                    <p class="text-[#444444] en">Saturday - Sunday: Closed</p>
+                                    <p class="text-[#444444] fr hidden">Samedi - Dimanche: Fermé</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-[#2C8C8A] text-white p-3 rounded-full mr-4">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-[#153B52]">LinkedIn</h4>
+                                    <a href="https://linkedin.com/in/ahmedrebai" target="_blank" class="text-[#2C8C8A] hover:underline">linkedin.com/in/ahmedrebai</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2800.559335734252!2d-75.6970229242649!3d45.4217789710724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cce041e7aed5c9f%3A0x4dc6c0dc72a12236!2sOttawa%2C%20ON!5e0!3m2!1sen!2sca!4v1689875007565!5m2!1sen!2sca" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-lg"></iframe>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <div class="bg-white p-8 rounded-2xl shadow-md">
+                        <h3 class="text-2xl font-bold text-[#153B52] mb-6 en">Send Us a Message</h3>
+                        <h3 class="text-2xl font-bold text-[#153B52] mb-6 fr hidden">Envoyez-nous un message</h3>
+                        
+                        <form id="contact-form">
+                            <div class="mb-6">
+                                <label for="name" class="block text-[#444444] font-medium mb-2 en">Your Name</label>
+                                <label for="name" class="block text-[#444444] font-medium mb-2 fr hidden">Votre nom</label>
+                                <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2C8C8A] focus:border-transparent" required>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="email" class="block text-[#444444] font-medium mb-2 en">Email Address</label>
+                                <label for="email" class="block text-[#444444] font-medium mb-2 fr hidden">Adresse email</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2C8C8A] focus:border-transparent" required>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="subject" class="block text-[#444444] font-medium mb-2 en">Subject</label>
+                                <label for="subject" class="block text-[#444444] font-medium mb-2 fr hidden">Sujet</label>
+                                <select id="subject" name="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2C8C8A] focus:border-transparent" required>
+                                    <option value="" class="en">Select a subject</option>
+                                    <option value="" class="fr hidden">Sélectionnez un sujet</option>
+                                    <option value="accounting" class="en">Accounting Services</option>
+                                    <option value="accounting" class="fr hidden">Services comptables</option>
+                                    <option value="it" class="en">IT Support</option>
+                                    <option value="it" class="fr hidden">Support informatique</option>
+                                    <option value="general" class="en">General Inquiry</option>
+                                    <option value="general" class="fr hidden">Demande générale</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="message" class="block text-[#444444] font-medium mb-2 en">Message</label>
+                                <label for="message" class="block text-[#444444] font-medium mb-2 fr hidden">Message</label>
+                                <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2C8C8A] focus:border-transparent" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-[#2C8C8A] hover:bg-[#247875] text-white font-bold py-3 px-6 rounded-full transition duration-300 en">
+                                Send Message
+                            </button>
+                            <button type="submit" class="w-full bg-[#2C8C8A] hover:bg-[#247875] text-white font-bold py-3 px-6 rounded-full transition duration-300 fr hidden">
+                                Envoyer le message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#153B52] text-white py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="md:flex md:justify-between">
+                <div class="mb-8 md:mb-0">
+                    <div class="flex items-center">
+                        <div class="bg-white text-[#153B52] w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl">B&B</div>
+                        <span class="ml-3 text-xl font-bold">Bit&Books</span>
+                    </div>
+                    <p class="mt-4 max-w-xs en">Reliable accounting and IT support for Ottawa businesses and individuals.</p>
+                    <p class="mt-4 max-w-xs fr hidden">Support comptable et informatique fiable pour les entreprises et les particuliers d'Ottawa.</p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h3 class="text-lg font-bold mb-4 en">Quick Links</h3>
+                        <h3 class="text-lg font-bold mb-4 fr hidden">Liens rapides</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#home" class="hover:text-[#2C8C8A] transition duration-300 en">Home</a></li>
+                            <li><a href="#home" class="hover:text-[#2C8C8A] transition duration-300 fr hidden">Accueil</a></li>
+                            <li><a href="#about" class="hover:text-[#2C8C8A] transition duration-300 en">About</a></li>
+                            <li><a href="#about" class="hover:text-[#2C8C8A] transition duration-300 fr hidden">À propos</a></li>
+                            <li><a href="#services" class="hover:text-[#2C8C8A] transition duration-300 en">Services</a></li>
+                            <li><a href="#services" class="hover:text-[#2C8C8A] transition duration-300 fr hidden">Services</a></li>
+                            <li><a href="#contact" class="hover:text-[#2C8C8A] transition duration-300 en">Contact</a></li>
+                            <li><a href="#contact" class="hover:text-[#2C8C8A] transition duration-300 fr hidden">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-bold mb-4 en">Services</h3>
+                        <h3 class="text-lg font-bold mb-4 fr hidden">Services</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="hover:text-[#2C8C8A] transition duration-300 en">Bookkeeping</a></li>
+                            <li><a href="#" class="hover:text-[#2C8C8A] transition duration-300 fr hidden">Tenue de livres</a></li>
+                            <li><a href="#" class="hover:text-[#2C8C8A] transition duration-300 en">Tax Filing</a></li>
+                            <li><a href="#" class="hover:text-[#2C8C8A] transition duration-300 fr hidden">Déclaration fiscale</a></li>
+                            <li><a href="#" class="hover:text-[#2C8C8A] transition duration-300 en">IT Support</a></li>
+                            <li><a href="#" class="hover:text-[#2C8C8A] transition duration-300 fr hidden">Support informatique</a></li>
+                            <li><a href="#" class="hover:text-[#2C8C8A] transition duration-300 en">Software Setup</a></li>
+                            <li><a href="#" class="hover:text-[#2C8C8A] transition duration-300 fr hidden">Configuration de logiciels</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-bold mb-4 en">Connect</h3>
+                        <h3 class="text-lg font-bold mb-4 fr hidden">Connecter</h3>
+                        <div class="flex space-x-4 mb-4">
+                            <a href="#" class="bg-[#2C8C8A] hover:bg-[#247875] text-white p-2 rounded-full transition duration-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="bg-[#2C8C8A] hover:bg-[#247875] text-white p-2 rounded-full transition duration-300">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="bg-[#2C8C8A] hover:bg-[#247875] text-white p-2 rounded-full transition duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                        
+                        <div class="flex items-center mt-6">
+                            <button id="footer-en-toggle" class="language-toggle active px-3 py-1 rounded-full text-sm font-medium">EN</button>
+                            <button id="footer-fr-toggle" class="language-toggle px-3 py-1 rounded-full text-sm font-medium ml-2">FR</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-[#2C8C8A] mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm en">© 2025 Bit&Books. All rights reserved.</p>
+                <p class="text-sm fr hidden">© 2025 Bit&Books. Tous droits réservés.</p>
+                <p class="text-sm opacity-80 mt-2 md:mt-0 en">Website built with AI & care in Ottawa 🇨🇦</p>
+                <p class="text-sm opacity-80 mt-2 md:mt-0 fr hidden">Site Web construit avec IA et soin à Ottawa 🇨🇦</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Language Toggle
+        function toggleLanguage(lang) {
+            // Update all language toggles
+            document.querySelectorAll('.language-toggle').forEach(toggle => {
+                toggle.classList.remove('active');
+            });
+            
+            if (lang === 'en') {
+                document.getElementById('en-toggle').classList.add('active');
+                document.getElementById('mobile-en-toggle').classList.add('active');
+                document.getElementById('footer-en-toggle').classList.add('active');
+                
+                // Show English content
+                document.querySelectorAll('.en').forEach(el => {
+                    el.classList.remove('hidden');
+                });
+                
+                // Hide French content
+                document.querySelectorAll('.fr').forEach(el => {
+                    el.classList.add('hidden');
+                });
+            } else {
+                document.getElementById('fr-toggle').classList.add('active');
+                document.getElementById('mobile-fr-toggle').classList.add('active');
+                document.getElementById('footer-fr-toggle').classList.add('active');
+                
+                // Show French content
+                document.querySelectorAll('.fr').forEach(el => {
+                    el.classList.remove('hidden');
+                });
+                
+                // Hide English content
+                document.querySelectorAll('.en').forEach(el => {
+                    el.classList.add('hidden');
+                });
+            }
+        }
+        
+        // Set up event listeners for all language toggles
+        document.getElementById('en-toggle').addEventListener('click', () => toggleLanguage('en'));
+        document.getElementById('fr-toggle').addEventListener('click', () => toggleLanguage('fr'));
+        document.getElementById('mobile-en-toggle').addEventListener('click', () => toggleLanguage('en'));
+        document.getElementById('mobile-fr-toggle').addEventListener('click', () => toggleLanguage('fr'));
+        document.getElementById('footer-en-toggle').addEventListener('click', () => toggleLanguage('en'));
+        document.getElementById('footer-fr-toggle').addEventListener('click', () => toggleLanguage('fr'));
+        
+        // Testimonial Slider
+        let currentTestimonial = 0;
+        const testimonials = document.querySelectorAll('.testimonial-slide');
+        const dots = document.querySelectorAll('.testimonial-dot');
+        
+        function showTestimonial(index) {
+            testimonials.forEach((testimonial, i) => {
+                testimonial.style.transform = `translateX(-${index * 100}%)`;
+            });
+            
+            dots.forEach(dot => {
+                dot.classList.remove('opacity-50');
+                dot.classList.add('opacity-50');
+            });
+            
+            dots[index].classList.remove('opacity-50');
+            currentTestimonial = index;
+        }
+        
+        document.getElementById('prev-testimonial').addEventListener('click', () => {
+            currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+            showTestimonial(currentTestimonial);
+        });
+        
+        document.getElementById('next-testimonial').addEventListener('click', () => {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            showTestimonial(currentTestimonial);
+        });
+        
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                const index = parseInt(dot.getAttribute('data-index'));
+                showTestimonial(index);
+            });
+        });
+        
+        // Initialize
+        showTestimonial(0);
+        
+        // Form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
